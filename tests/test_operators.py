@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 import unittest
 
-from pandasticsearch.operators import *
+from pandases.operators import *
 
 
 class TestOperators(unittest.TestCase):

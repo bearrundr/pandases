@@ -2,11 +2,11 @@
 import unittest
 from mock import patch, Mock
 import json
-from pandasticsearch.dataframe import DataFrame, Column
-from pandasticsearch.operators import *
+from pandases.dataframe import DataFrame, Column
+from pandases.operators import *
 
 
-@patch('pandasticsearch.client.urllib.request.urlopen')
+@patch('pandases.client.urllib.request.urlopen')
 def create_df_from_es(mock_urlopen):
     response = Mock()
     dic = {
@@ -35,7 +35,7 @@ def create_df_from_es(mock_urlopen):
     return DataFrame.from_es(url="http://localhost:9200", index='index', doc_type='doc_type')
 
 
-@patch('pandasticsearch.client.urllib.request.urlopen')
+@patch('pandases.client.urllib.request.urlopen')
 def create_df_from_es_after_removal_mapping(mock_urlopen):
     """
     https://www.elastic.co/guide/en/elasticsearch/reference/current/removal-of-types.html

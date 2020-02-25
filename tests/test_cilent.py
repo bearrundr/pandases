@@ -2,11 +2,11 @@
 import unittest
 from mock import patch, Mock
 
-from pandasticsearch.client import RestClient
+from pandases.client import RestClient
 
 
 class TestClients(unittest.TestCase):
-    @patch('pandasticsearch.client.urllib.request.urlopen')
+    @patch('pandases.client.urllib.request.urlopen')
     def test_rest_client_returns_results(self, mock_urlopen):
         response = Mock()
         response.read.return_value = """{"hits" : {"hits": [{"_source": {}}] }}""".encode("utf-8")

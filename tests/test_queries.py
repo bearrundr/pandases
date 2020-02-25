@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 import unittest
 
-from pandasticsearch.queries import Select, Agg
+from pandases.queries import Select, Agg
 
 
 def create_hits():

@@ -1,8 +1,8 @@
 # -*- coding: UTF-8 -*-
 import unittest
 
-from pandasticsearch.operators import *
-from pandasticsearch.types import Row, Column
+from pandases.operators import *
+from pandases.types import Row, Column
 
 
 class TestSchema(unittest.TestCase):
