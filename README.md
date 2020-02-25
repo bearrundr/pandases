@@ -1,26 +1,26 @@
-## Pandasticsearch
+## pandases
 
-[![Build Status](https://travis-ci.org/onesuper/pandasticsearch.svg?branch=master)](https://travis-ci.org/onesuper/pandasticsearch) [![PyPI](https://img.shields.io/pypi/v/pandasticsearch.svg)](https://pypi.python.org/pypi/pandasticsearch)
+[![Build Status](https://travis-ci.org/onesuper/pandases.svg?branch=master)](https://travis-ci.org/onesuper/pandases) [![PyPI](https://img.shields.io/pypi/v/pandases.svg)](https://pypi.python.org/pypi/pandases)
 
 
-Pandasticsearch is an Elasticsearch client for data-analysis purpose.
+pandases is an Elasticsearch client for data-analysis purpose.
 It provides table-like access to Elasticsearch documents, similar
 to the Python Pandas library and R DataFrames.
 
 To install:
 
 ```
-pip install pandasticsearch
+pip install pandases
 # if you intent to export Pandas DataFrame 
-pip install pandasticsearch[pandas]
+pip install pandases[pandas]
 ```
 
   Elasticsearch is skilled in real-time indexing, search and data-analysis.
-  Pandasticsearch can convert the analysis results (e.g. multi-level nested aggregation)
+  pandases can convert the analysis results (e.g. multi-level nested aggregation)
   into [Pandas](http://pandas.pydata.org) DataFrame objects for subsequent data analysis.
   
 
-Checkout the API doc: [http://pandasticsearch.readthedocs.io/en/latest/](http://pandasticsearch.readthedocs.io/en/latest/).
+Checkout the API doc: [http://pandases.readthedocs.io/en/latest/](http://pandases.readthedocs.io/en/latest/).
 
 ## Usage
 
@@ -31,7 +31,7 @@ It is type-safe, easy-to-use and Pandas-flavored.
 
 ```python
 # Create a DataFrame object
-from pandasticsearch import DataFrame
+from pandases import DataFrame
 df = DataFrame.from_es(url='http://localhost:9200', index='people', doc_type='mapping_name')
 
 # Print the schema(mapping) of the index
@@ -158,7 +158,7 @@ df.sort('doc["age"].value * 2').collect()
 
 ## Use with Another Python Client
 
-Pandasticsearch can also be used with another full featured Python client:
+pandases can also be used with another full featured Python client:
 
 * [elasticsearch-py](https://github.com/elastic/elasticsearch-py) (Official)
 * [Elasticsearch-SQL](https://github.com/NLPchina/elasticsearch-sql)
@@ -169,7 +169,7 @@ Pandasticsearch can also be used with another full featured Python client:
 ### Build query
 
 ```Python
-from pandasticsearch import DataFrame
+from pandases import DataFrame
 body = df[df['gender'] == 'male'].agg(df['age'].avg).to_dict()
  
 from elasticsearch import Elasticsearch
@@ -183,7 +183,7 @@ from elasticsearch import Elasticsearch
 es = Elasticsearch('http://localhost:9200')
 result_dict = es.search(index="recruit", body={"query": {"match_all": {}}})
 
-from pandasticsearch import Select
+from pandases import Select
 pandas_df = Select.from_dict(result_dict).to_pandas()
 ```
 
