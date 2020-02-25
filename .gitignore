@@ -1,0 +1,14 @@
+*~
+*.pyc
+.eggs/
+.idea/
+dist/
+*.egg-info
+build/
+.cache/
+pandases/__pycache__/
+pandases/utils/__pycache__/
+tests/__pycache__/
+tests/utils/__pycache__/
+/doc/_build/
+/.doc/
