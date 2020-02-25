@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "/home/iriveroaks/.conda/envs/scrap/bin/python",
+    "python.linting.pylamaEnabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.envFile": "${workspaceFolder}/.vscode/.env"
+}
