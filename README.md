@@ -10,6 +10,10 @@ to the Python Pandas library and R DataFrames.
 To install:
 
 ```
+python setup.py build
+python setup.py install
+
+or
 pip install pandases
 # if you intent to export Pandas DataFrame 
 pip install pandases[pandas]
