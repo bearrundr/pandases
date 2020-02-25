@@ -12,3 +12,4 @@ tests/__pycache__/
 tests/utils/__pycache__/
 /doc/_build/
 /.doc/
+.vscode/
